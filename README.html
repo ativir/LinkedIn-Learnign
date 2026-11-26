@@ -281,5 +281,25 @@ body.season-summer { background: rgb(11, 58, 92); }
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- Existing calendar code -->
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const today = new Date();
+
+  document.querySelectorAll(".cell").forEach(cell => {
+    cell.classList.remove("today");
+
+    if (
+      today.getMonth() === 11 &&
+      Number(cell.dataset.day) === today.getDate()
+    ) {
+      cell.classList.add("today");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
 </body></html>
